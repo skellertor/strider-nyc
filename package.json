@@ -1,8 +1,8 @@
 {
-  "name": "strider-istanbul",
+  "name": "strider-nyc",
   "version": "1.0.0",
   "description": "Test Plugin for Strider-CD that uses istanbul, via nyc",
-  "homepage": "https://github.com/skellertor/strider-istanbul",
+  "homepage": "https://github.com/skellertor/strider-nyc",
   "main": "webapp.js",
   "scripts": {
     "lint": "eslint *.js config lib",
@@ -10,12 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/skellertor/strider-istanbul.git"
+    "url": "https://github.com/skellertor/strider-nyc.git"
   },
   "keywords": [
     "strider",
     "plugin",
-    "test"
+    "test",
+    "nyc"
   ],
   "engines": {
     "node": ">=4.2"
@@ -28,8 +29,8 @@
   },
   "strider": {
     "type": "job",
-    "id": "strider-istanbul",
-    "title": "Strider Istanbul",
+    "id": "strider-nyc",
+    "title": "Strider nyc",
     "worker": "worker.js",
     "webapp": "webapp.js",
     "icon": "icon.png",
