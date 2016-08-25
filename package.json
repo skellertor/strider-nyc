@@ -1,0 +1,47 @@
+{
+  "name": "strider-istanbul",
+  "version": "1.0.0",
+  "description": "Test Plugin for Strider-CD that uses istanbul, via nyc",
+  "homepage": "https://github.com/skellertor/strider-istanbul",
+  "main": "webapp.js",
+  "scripts": {
+    "lint": "eslint *.js config lib",
+    "test": "istanbul cover -x '**/node_modules/**' _mocha -- -R json-cov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skellertor/strider-istanbul.git"
+  },
+  "keywords": [
+    "strider",
+    "plugin",
+    "test"
+  ],
+  "engines": {
+    "node": ">=4.2"
+  },
+  "author": "skellertor",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "underscore": "^1.8.3"
+  },
+  "strider": {
+    "type": "job",
+    "id": "strider-istanbul",
+    "title": "Strider Istanbul",
+    "worker": "worker.js",
+    "webapp": "webapp.js",
+    "icon": "icon.png",
+    "config": true
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^2.0.0",
+    "nyc": "^8.1.0",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  }
+}
