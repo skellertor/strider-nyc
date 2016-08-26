@@ -7,6 +7,12 @@ var location = __dirname;
 
 module.exports = {
   config: {},
+  listen: function (emitter, innercontext) {
+    emitter.on('job.status.tested', function (one, two, three, four) {
+      console.log('CONTEXT',innercontext);
+      console.log('PARAMS', one, two, three, four);
+    });
+  },
   routes: function (app, context) {
     app.get('/report', function (req, res) {
       var org = req.params.org;
