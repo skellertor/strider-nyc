@@ -40,6 +40,7 @@ module.exports = {
               cmd: 'nyc report --reporter=html'
             }, function(err, stdout){
               console.log('JOB', job);
+              console.log('CONTEXT', context);
               if(self.env.error) return done(err);
               done();
             });
