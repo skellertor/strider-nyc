@@ -10,6 +10,7 @@ module.exports = {
   config: {},
   listen: function (emitter, context) {
     emitter.on('plugin.strider-nyc.started', function (job) {
+      console.log('JOB', job);
       var reportUrl = context.config.server_name + '/' + job.project.display_name +  '/api/strider-nyc/report/?branch=master&branchresult=' + job.ref.branch;
       job.coverage_results_url = reportUrl;
     });
