@@ -7,6 +7,12 @@ module.exports = {
       env: {
         error: false
       },
+      listen: function (emitter, innercontext) {
+        emitter.on('job.status.tested', function () {
+          console.log('hit tested');
+          emitter.emit('plugin.strider-nyc.tested', job);
+        });
+      },
       test: function (context, done) {
         var self = this;
         context.cmd({
