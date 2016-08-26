@@ -1,6 +1,4 @@
 'use strict';
-var os = require('os');
-var host = os.hostname();
 
 module.exports = {
   init: function (config, job, context, cb) {
@@ -8,6 +6,12 @@ module.exports = {
       // any extra env variables. Will be available during all phases
       env: {
         error: false
+      },
+      listen: function (emitter, context) {
+        emitter.on('job.status.tested', function (one, two, three, four) {
+          console.log('CONTEXT',context);
+          console.log('PARAMS', one, two, three, four);
+        });
       },
       test: function (context, done) {
         var self = this;
@@ -41,9 +45,6 @@ module.exports = {
             context.cmd({
               cmd: 'nyc report --reporter=html'
             }, function(err, stdout){
-              console.log('JOB', job);
-              console.log('CONTEXT', context);
-              console.log('HOST', host);
               if(self.env.error) return done(err);
               done();
             });
