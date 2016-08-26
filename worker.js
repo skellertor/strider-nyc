@@ -8,11 +8,10 @@ module.exports = {
         error: false
       },
       listen: function (emitter, innercontext) {
-        emitter.on('job.status.tested', function () {
-          console.log('hit tested');
-          emitter.emit('plugin.strider-nyc.tested', job);
+        emitter.on('job.status.started', function () {
+          emitter.emit('plugin.strider-nyc.started', job);
         });
-        emitter.on('job.status.done', function (changed) {
+        emitter.on('plugin.strider-nyc.tested', function (changed) {
           console.log('JOB.status.done', changed);
         });
       },
