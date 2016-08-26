@@ -18,7 +18,8 @@ module.exports = {
           cmd: 'nyc --reporter=none --all _mocha -R json-cov'
         }, function (err, stdout) {
           if(err){
-            self.env.error = true;
+            self.env.error = err;
+            self.env.error_true = true;
           }
           var beginOfJson = stdout.indexOf('{');
           var jsonString = stdout.substr(beginOfJson, stdout.length);
@@ -45,7 +46,7 @@ module.exports = {
             context.cmd({
               cmd: 'nyc report --reporter=html'
             }, function(err, stdout){
-              if(self.env.error) return done(err);
+              if(self.env.error_true) return done(self.env.error);
               done();
             });
           });
