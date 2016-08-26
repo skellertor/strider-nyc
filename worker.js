@@ -29,7 +29,8 @@ module.exports = {
             return done(new Error('coverage report not json'));
           }
           job.test_results = {
-            stats: report.stats
+            stats: report.stats,
+            failures: report.failures
           };
           context.cmd({
             cmd: 'nyc report --reporter=text-summary'
