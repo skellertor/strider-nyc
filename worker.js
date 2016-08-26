@@ -1,4 +1,6 @@
 'use strict';
+var os = require('os');
+var host = os.hostname;
 
 module.exports = {
   init: function (config, job, context, cb) {
@@ -41,6 +43,7 @@ module.exports = {
             }, function(err, stdout){
               console.log('JOB', job);
               console.log('CONTEXT', context);
+              console.log('HOST', host);
               if(self.env.error) return done(err);
               done();
             });
