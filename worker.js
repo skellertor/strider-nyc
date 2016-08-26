@@ -11,7 +11,7 @@ module.exports = {
         emitter.on('job.status.tested', function () {
           emitter.emit('plugin.strider-nyc.started', job);
         });
-        emitter.on('job.status.nycurl', function (changed) {
+        emitter.on('job.status.phase.done', function (changed) {
           console.log('JOB.status.done', changed);
         });
       },
