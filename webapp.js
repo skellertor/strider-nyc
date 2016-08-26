@@ -8,7 +8,7 @@ var location = __dirname;
 module.exports = {
   config: {},
   listen: function (emitter, innercontext) {
-    emitter.on('job.status.tested', function (one, two, three, four) {
+    emitter.on('plugin.strider-nyc.tested', function (one, two, three, four) {
       console.log('CONTEXT',innercontext);
       console.log('PARAMS', one, two, three, four);
     });
