@@ -1,6 +1,6 @@
 'use strict';
 var os = require('os');
-var host = os.hostname;
+var host = os.hostname();
 
 module.exports = {
   init: function (config, job, context, cb) {
