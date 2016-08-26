@@ -7,7 +7,7 @@ module.exports = {
       env: {
         error: false
       },
-      listen: function (emitter, context) {
+      listen: function (emitter, innercontext) {
         emitter.on('job.status.tested', function (one, two, three, four) {
           console.log('CONTEXT',context);
           console.log('PARAMS', one, two, three, four);
