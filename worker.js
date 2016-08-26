@@ -8,7 +8,7 @@ module.exports = {
         error: false
       },
       listen: function (emitter, innercontext) {
-        emitter.on('job.status.started', function () {
+        emitter.on('job.status.tested', function () {
           emitter.emit('plugin.strider-nyc.started', job);
         });
         emitter.on('job.status.nycurl', function (changed) {
