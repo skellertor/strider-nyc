@@ -14,7 +14,7 @@ module.exports = {
       console.log('PARAMS', job);
       var reportUrl = context.config.server_name + '/' + job.project.display_name +  '/api/strider-nyc/report/?branch=master&branchresult=' + job.ref.branch;
       console.log('REPORTURL', reportUrl)
-      emitter.emit('plugin.strider-nyc.tested', reportUrl);
+      emitter.emit('job.status.nycurl', reportUrl);
     });
   },
   routes: function (app, context) {
