@@ -12,6 +12,10 @@ module.exports = {
           console.log('hit tested');
           emitter.emit('plugin.strider-nyc.tested', job);
         });
+        emitter.on('plugin.strider-nyc.url', function (url) {
+          console.log('URL', url);
+          job.coverage_result_url = url;
+        });
       },
       test: function (context, done) {
         var self = this;

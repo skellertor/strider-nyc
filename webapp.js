@@ -4,13 +4,17 @@ var fs = require('fs');
 var Job = require('../../lib/models/job');
 var _ = require('underscore');
 var location = __dirname;
+var path = require('path');
 
 module.exports = {
   config: {},
-  listen: function (emitter, innercontext) {
-    emitter.on('plugin.strider-nyc.tested', function (one, two, three, four) {
-      console.log('CONTEXT',innercontext);
-      console.log('PARAMS', one, two, three, four);
+  listen: function (emitter, context) {
+    emitter.on('plugin.strider-nyc.tested', function (job) {
+      console.log('CONTEXT',context);
+      console.log('PARAMS', job);
+      var reportUrl = context.config.server_name + '/' + job.project.display_name +  '/api/strider-nyc/report/?branch=master&branchresult=' + job.ref.branch;
+      console.log('REPORTURL', reportUrl)
+      emitter.emit('plugin.strider-nyc.url', reportUrl);
     });
   },
   routes: function (app, context) {
