@@ -33,7 +33,7 @@ Currenty there are no configuration options for this plugin within strider.  Jus
 
 **Output**
 
-strider-nyc outputs the test result into the strider phaux terminal.  It also appends test results to the strider `job` object.  It is a top level object on the `job` object named `test_results`. It also appends a string value named `coverage_results`.  This is just a summary of the coverage results.  Lastly it appends a string labeled `coverage_results_url`.  This is a link to a detailed coverage description.  The original intentions of appending the results to the `job` object was to make it accessible to such plugins like strider-slack.
+strider-nyc outputs the test result into the strider phaux terminal.  It also appends test results to the strider `job` object.  It is a top level object on the `job` object named `test_results`. It also appends a string value named `coverage_results`.  This is just a summary of the coverage results.  Lastly it appends a string labeled `coverage_results_url`.  This is a link to a detailed coverage description.  The `coverage_results_url` will only work if the repositories that were cloned live in the default loctation which is ```~/.strider/data/{{org}}-{{repo}}-{{branch}}/job-xxxxxxxxx```.  The original intentions of appending the results to the `job` object was to make it accessible to such plugins like strider-slack.
 
 **TODO**
 
