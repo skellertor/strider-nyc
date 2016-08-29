@@ -7,7 +7,7 @@
 
 **Description**
 
-This plugin is currently under development.  Right now it runs coverage and unit tests.  It leverages mocha and nyc.  By default it only looks in the ```test``` directory for unit tests.  It will run through every directory for coverage results unless specified in the package.json in the `nyc` stanza. 
+This plugin is currently under development.  Right now it runs coverage and unit tests.  It leverages [mocha](https://github.com/mochajs/mocha) and [nyc](https://github.com/istanbuljs/nyc).  By default it only looks in the ```test``` directory for unit tests.  It will run through every directory for coverage results unless specified in the package.json in the `nyc` stanza. 
 
 You can specify which files/directories to include or exclude from coverage tests by including the following options. Just add the `nyc` stanza to the package.json of the project you want to test.
 
