@@ -1,5 +1,7 @@
 # strider-nyc
 
+#####Paths are hardcoded to work on \*nix like operating systems 
+
 **Getting started**
 
 1. ```cd strider```
